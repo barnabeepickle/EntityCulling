@@ -1,27 +1,36 @@
-
 pluginManagement {
     repositories {
+        mavenCentral()
+        maven {
+            name = "minecraftforge"
+            url = 'https://maven.minecraftforge.net/'
+        }
+        maven {
+            name = "codemc"
+            url = "https://repo.codemc.io/repository/maven-public/"
+        }
         maven {
             // RetroFuturaGradle
-            name "GTNH Maven"
-            url "https://nexus.gtnewhorizons.com/repository/public/"
+            name = "GTNH Maven"
+            url = "https://nexus.gtnewhorizons.com/repository/public/"
             mavenContent {
                 includeGroup("com.gtnewhorizons")
                 includeGroupByRegex("com\\.gtnewhorizons\\..+")
             }
         }
-        gradlePluginPortal()
-        mavenCentral()
-        mavenLocal()
+        maven {
+            name = "cursemaven"
+            url = "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+		gradlePluginPortal()
     }
 }
 
 plugins {
-    id 'com.gtnewhorizons.gtnhsettingsconvention' version '1.0.15'
+    id 'com.gtnewhorizons.gtnhsettingsconvention' version '1.0.41'
 }
 
-//blowdryerSetup {
-//    repoSubfolder 'gtnhShared'
-//    github('GTNewHorizons/ExampleMod1.7.10', 'tag', '0.2.2')
-    //devLocal '.' // Use this when testing config updates locally
-//}
+rootProject.name = "entityculling"
