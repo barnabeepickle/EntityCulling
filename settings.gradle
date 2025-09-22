@@ -25,6 +25,10 @@ pluginManagement {
                 includeGroup "curse.maven"
             }
         }
+        maven {
+            name = "jitpack"
+            url = "https://jitpack.io"
+        }
 		gradlePluginPortal()
     }
 }
